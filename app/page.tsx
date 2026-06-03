@@ -401,6 +401,45 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="mt-6 rounded-[28px] border border-emerald-400/20 bg-emerald-400/[0.06] p-5 shadow-[0_20px_80px_rgba(16,185,129,0.08)]">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-emerald-300/80">
+                  Mock portfolio summary
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
+                  First portfolio view
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-white/60">
+                  A small MVP step beyond watchlist CRUD: show a compact portfolio snapshot before wiring in live positions.
+                </p>
+              </div>
+              <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                Mock data
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-white/35">Total positions</p>
+                <p className="mt-2 text-2xl font-semibold text-white">3</p>
+                <p className="mt-2 text-sm text-white/45">Starter view for the next MVP milestone.</p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-white/35">Market value</p>
+                <p className="mt-2 text-2xl font-semibold text-white">$12,450</p>
+                <p className="mt-2 text-sm text-white/45">Illustrative value using placeholder holdings.</p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-white/35">Unrealized P&amp;L</p>
+                <p className="mt-2 text-2xl font-semibold text-emerald-300">+$420</p>
+                <p className="mt-2 text-sm text-white/45">Simple mock profit and loss summary.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
