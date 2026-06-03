@@ -14,3 +14,11 @@ yarn-error.log*
 pnpm-debug.log*
 tmp
 .tmp
+
+# Local backups / scratch files
+.env.save
+prisma-run.log
+app/backups
+prisma/backups
+*.backup
+*.broken
