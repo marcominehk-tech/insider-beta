@@ -2,6 +2,7 @@ import Link from "next/link";
 import DashboardFilters from "../../components/dashboard-filters";
 import { getHomeData } from "../../lib/home-data";
 import { prisma } from "../../lib/prisma";
+import WatchlistManager from "../../components/watchlist-manager";
 
 type HomeTrade = {
   id: string;
@@ -516,6 +517,17 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
                     </div>
                   </div>
                 </div>
+
+                <WatchlistManager
+                  items={dbWatchlist.map((item) => ({
+                    id: item.id,
+                    entityType: item.entityType,
+                    symbol: item.symbol,
+                    label: item.label,
+                    subtitle: item.subtitle,
+                    notes: item.notes,
+                  }))}
+                />
 
                 <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
                   <p className="text-sm font-medium text-white/80">Top performer</p>
