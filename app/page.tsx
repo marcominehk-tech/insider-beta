@@ -1,6 +1,17 @@
-export const revalidate = 300;
 import Link from "next/link";
 import { getHomeData } from "../lib/home-data";
+
+export const revalidate = 300;
+
+const mockPortfolio = {
+  totalPositions: 3,
+  marketValue: "$12,450",
+  unrealizedPnL: "+$1,284",
+  unrealizedPnLLabel: "Unrealized P&L",
+  positionsNote: "Starter view for the next MVP milestone.",
+  marketValueNote: "Illustrative value using placeholder holdings.",
+  pnlNote: "Simple performance layer before live position sync.",
+};
 
 type HomeTrade = {
   id: string;
@@ -424,20 +435,20 @@ export default async function HomePage() {
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-white/35">Total positions</p>
-                <p className="mt-2 text-2xl font-semibold text-white">3</p>
-                <p className="mt-2 text-sm text-white/45">Starter view for the next MVP milestone.</p>
+                <p className="mt-2 text-2xl font-semibold text-white">{mockPortfolio.totalPositions}</p>
+                <p className="mt-2 text-sm text-white/45">{mockPortfolio.positionsNote}</p>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-white/35">Market value</p>
-                <p className="mt-2 text-2xl font-semibold text-white">$12,450</p>
-                <p className="mt-2 text-sm text-white/45">Illustrative value using placeholder holdings.</p>
+                <p className="mt-2 text-2xl font-semibold text-white">{mockPortfolio.marketValue}</p>
+                <p className="mt-2 text-sm text-white/45">{mockPortfolio.marketValueNote}</p>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-white/35">Unrealized P&amp;L</p>
-                <p className="mt-2 text-2xl font-semibold text-emerald-300">+$420</p>
-                <p className="mt-2 text-sm text-white/45">Simple mock profit and loss summary.</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-white/35">{mockPortfolio.unrealizedPnLLabel}</p>
+                <p className="mt-2 text-2xl font-semibold text-emerald-300">{mockPortfolio.unrealizedPnL}</p>
+                <p className="mt-2 text-sm text-white/45">{mockPortfolio.pnlNote}</p>
               </div>
             </div>
           </div>
