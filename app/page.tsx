@@ -1,3 +1,4 @@
+export const revalidate = 300;
 import Link from "next/link";
 import { getHomeData } from "../lib/home-data";
 
