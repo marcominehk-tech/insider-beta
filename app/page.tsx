@@ -1,17 +1,8 @@
 import Link from "next/link";
 import { getHomeData } from "../lib/home-data";
+import { getMockPortfolioSummary } from "../lib/portfolio-summary";
 
 export const revalidate = 300;
-
-const mockPortfolio = {
-  totalPositions: 3,
-  marketValue: "$12,450",
-  unrealizedPnL: "+$1,284",
-  unrealizedPnLLabel: "Unrealized P&L",
-  positionsNote: "Starter view for the next MVP milestone.",
-  marketValueNote: "Illustrative value using placeholder holdings.",
-  pnlNote: "Simple performance layer before live position sync.",
-};
 
 type HomeTrade = {
   id: string;
@@ -213,6 +204,7 @@ function TradeMobileCard({ trade }: { trade: HomeTrade }) {
 }
 
 export default async function HomePage() {
+  const mockPortfolio = getMockPortfolioSummary();
   const data = await getHomeData();
 
   const latestTrades: HomeTrade[] = data.latestTrades ?? [];
